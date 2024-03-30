@@ -7,7 +7,10 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.siukatech.poc'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+//sourceCompatibility = '17'
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+}
 
 repositories {
     mavenLocal()
@@ -29,7 +32,8 @@ bootJar {
 dependencies {
     implementation 'com.siukatech.poc:react-backend-parent:0.0.1-SNAPSHOT'
 
-    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+//    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
     runtimeOnly 'org.postgresql:postgresql:42.6.0'
 
