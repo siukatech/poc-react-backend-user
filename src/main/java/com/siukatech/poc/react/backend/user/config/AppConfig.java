@@ -1,7 +1,7 @@
 package com.siukatech.poc.react.backend.user.config;
 
-import com.siukatech.poc.react.backend.parent.EnableReactBackend;
-import com.siukatech.poc.react.backend.parent.user.EnableUserSupport;
+import com.siukatech.poc.react.backend.core.EnableReactBackend;
+import com.siukatech.poc.react.backend.core.user.EnableUserSupport;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 ////        , SecurityConfigImport.class
 ////})
 //@ComponentScan({
-//        "com.siukatech.poc.react.backend.parent.web.controller"
+//        "com.siukatech.poc.react.backend.core.web.controller"
 //})
 //@EnableReactBackend
 @EnableUserSupport

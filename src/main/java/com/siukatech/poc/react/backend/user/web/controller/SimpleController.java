@@ -1,6 +1,6 @@
 package com.siukatech.poc.react.backend.user.web.controller;
 
-import com.siukatech.poc.react.backend.parent.web.annotation.base.RestApiController;
+import com.siukatech.poc.react.backend.core.web.annotation.base.RestApiController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
