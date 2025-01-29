@@ -1,7 +1,8 @@
 plugins {
 //    id 'java'
     id 'application'
-    id 'org.springframework.boot' version '3.2.3'
+//    id 'org.springframework.boot' version '3.2.3'
+    id 'org.springframework.boot' version '3.3.7'
     id 'maven-publish'
 }
 apply plugin: 'io.spring.dependency-management'
@@ -34,17 +35,17 @@ bootJar {
 }
 
 // define react-backend-core version
-def parentProjectVersion = '0.0.1-SNAPSHOT'
+def coreProjectVersion = '0.0.1-SNAPSHOT'
 
 dependencies {
-    implementation "com.siukatech.poc:react-backend-core:$parentProjectVersion"
+    implementation "com.siukatech.poc:react-backend-core:$coreProjectVersion"
 
 //    annotationProcessor 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
-    runtimeOnly 'org.postgresql:postgresql:42.6.0'
+    runtimeOnly 'org.postgresql:postgresql:42.7.2'
 
-    testImplementation testFixtures("com.siukatech.poc:react-backend-core:$parentProjectVersion")
+    testImplementation testFixtures("com.siukatech.poc:react-backend-core:$coreProjectVersion")
 //    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.springframework.security:spring-security-test'
 //    testImplementation 'com.h2database:h2:2.1.214'
