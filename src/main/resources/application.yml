@@ -89,7 +89,9 @@ logging:
   level:
 #    root: DEBUG
     org.hibernate.SQL: DEBUG
+    # BasicBinder is not working
 #    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.orm.jdbc.bind: TRACE
 #    org.springframework.web: TRACE
     org.springframework.security: TRACE
     org.springframework.http.client: TRACE
