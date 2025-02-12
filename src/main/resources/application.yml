@@ -86,6 +86,9 @@ logging:
 #  pattern:
 ##    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 #    level: "%5p [${spring.application.name:}-%X{traceId:-}-%X{spanId:-}]"
+#  structured:
+#    format:
+#      console: ecs
   level:
 #    root: DEBUG
     org.hibernate.SQL: DEBUG
