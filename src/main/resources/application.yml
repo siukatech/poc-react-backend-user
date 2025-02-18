@@ -9,6 +9,29 @@ spring:
     virtual:
       enabled: true
 
+  cache:
+#    type: ehcache
+#    ehcache:
+#      time-to-live: 5m
+    type: redis
+    redis:
+      time-to-live: 5m
+
+  data:
+    redis:
+      host: localhost
+      port: 36379
+#      username: default
+#      password: foobared
+#      sentinel:
+#        username: fbuser01
+#        password: ${spring.data.redis.password}
+##        master: redis
+
+# This is not working
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+
   jpa:
     properties:
       hibernate:
