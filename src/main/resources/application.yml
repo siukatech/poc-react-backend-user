@@ -21,9 +21,13 @@ spring:
     redis:
       host: localhost
       port: 36379
+#      port: 36380
 #      username: default
-#      password: foobared
-#      sentinel:
+      password: redispass
+      lettuce:
+        pool:
+          enabled: true
+  #      sentinel:
 #        username: fbuser01
 #        password: ${spring.data.redis.password}
 ##        master: redis
@@ -121,6 +125,7 @@ logging:
 #    org.springframework.web: TRACE
     org.springframework.security: TRACE
     org.springframework.http.client: TRACE
+    org.springframework.data.redis: DEBUG
     org.springframework.web.servlet.DispatcherServlet: DEBUG
     com.siukatech.poc.react.backend.core: TRACE
     com.siukatech.poc.react.backend.user: DEBUG
