@@ -43,7 +43,8 @@ ext {
 }
 
 dependencies {
-    implementation "com.siukatech.poc:react-backend-core:$coreProjectVersion"
+//    implementation "com.siukatech.poc:react-backend-core:$coreProjectVersion"
+    implementation "com.siukatech.poc:react-backend-module-user:$coreProjectVersion"
 
 //    annotationProcessor 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -54,7 +55,9 @@ dependencies {
 
     runtimeOnly 'org.postgresql:postgresql:42.7.2'
 
-    testImplementation testFixtures("com.siukatech.poc:react-backend-core:$coreProjectVersion")
+//    testImplementation testFixtures("com.siukatech.poc:react-backend-core:$coreProjectVersion")
+//    testImplementation testFixtures("com.siukatech.poc:react-backend-module-core:$coreProjectVersion")
+    testImplementation testFixtures("com.siukatech.poc:react-backend-module-user:$coreProjectVersion")
 //    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.springframework.security:spring-security-test'
 //    testImplementation 'com.h2database:h2:2.1.214'

@@ -1,10 +1,9 @@
 package com.siukatech.poc.react.backend.user.web.controller;
 
-import com.siukatech.poc.react.backend.core.web.annotation.base.RestApiController;
+import com.siukatech.poc.react.backend.module.core.web.annotation.base.RestApiController;
 import com.siukatech.poc.react.backend.user.business.dto.SimpleDto;
 import com.siukatech.poc.react.backend.user.business.form.SimpleForm;
 import com.siukatech.poc.react.backend.user.business.mapper.SimpleMapper;
-import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

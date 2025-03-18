@@ -10,27 +10,28 @@ spring:
       enabled: true
 
   cache:
-#    type: ehcache
-#    ehcache:
-#      time-to-live: 5m
-    type: redis
-    redis:
+    cache-names: user
+    type: ehcache
+    ehcache:
       time-to-live: 5m
+#    type: redis
+#    redis:
+#      time-to-live: 5m
 
-  data:
-    redis:
-      host: localhost
-      port: 36379
-#      port: 36380
-#      username: default
-      password: redispass
-      lettuce:
-        pool:
-          enabled: true
-  #      sentinel:
-#        username: fbuser01
-#        password: ${spring.data.redis.password}
-##        master: redis
+#  data:
+#    redis:
+#      host: localhost
+#      port: 36379
+##      port: 36380
+##      username: default
+#      password: redispass
+#      lettuce:
+#        pool:
+#          enabled: true
+#  #      sentinel:
+##        username: fbuser01
+##        password: ${spring.data.redis.password}
+###        master: redis
 
 # This is not working
 #  autoconfigure:
