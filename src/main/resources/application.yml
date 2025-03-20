@@ -10,14 +10,16 @@ spring:
       enabled: true
 
   cache:
-    cache-names: user
+##    cache-names: user
+#    type: simple
+
     type: ehcache
     ehcache:
       time-to-live: 5m
+
 #    type: redis
 #    redis:
 #      time-to-live: 5m
-
 #  data:
 #    redis:
 #      host: localhost
@@ -25,13 +27,13 @@ spring:
 ##      port: 36380
 ##      username: default
 #      password: redispass
-#      lettuce:
-#        pool:
-#          enabled: true
-#  #      sentinel:
-##        username: fbuser01
-##        password: ${spring.data.redis.password}
-###        master: redis
+##      lettuce:
+##        pool:
+##          enabled: true
+##        sentinel:
+##          username: fbuser01
+##          password: ${spring.data.redis.password}
+##          master: redis
 
 # This is not working
 #  autoconfigure:
@@ -130,4 +132,5 @@ logging:
     org.springframework.web.servlet.DispatcherServlet: DEBUG
     com.siukatech.poc.react.backend.core: TRACE
     com.siukatech.poc.react.backend.user: DEBUG
+    com.siukatech.poc.react.backend.module.user.caching: DEBUG
 
