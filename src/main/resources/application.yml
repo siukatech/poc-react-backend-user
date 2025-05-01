@@ -130,7 +130,10 @@ logging:
     org.springframework.http.client: TRACE
     org.springframework.data.redis: DEBUG
     org.springframework.web.servlet.DispatcherServlet: DEBUG
-    com.siukatech.poc.react.backend.core: TRACE
-    com.siukatech.poc.react.backend.user: DEBUG
+    com.siukatech.poc.react.backend.module.core: TRACE
+    com.siukatech.poc.react.backend.module.core.config: DEBUG
+    com.siukatech.poc.react.backend.module.user: DEBUG
     com.siukatech.poc.react.backend.module.user.caching: DEBUG
+    com.siukatech.poc.react.backend.module.user.config: DEBUG
+    com.siukatech.poc.react.backend.user: DEBUG
 
