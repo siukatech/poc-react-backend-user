@@ -5,26 +5,26 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientProperties;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 @SpringBootTest
 class ReactBackendAppTests {
 
-	@MockBean
+	@MockitoBean
 	private InMemoryClientRegistrationRepository clientRegistrationRepository;
 
 	// After moving the following WebSecurityConfig Components from constructor to filterChain,
 	// they are no longer required to mark as MockBean or MockitoBean
-//	@MockBean
+//	@MockitoBean
 //	private OAuth2ClientProperties oAuth2ClientProperties;
-//	@MockBean
+//	@MockitoBean
 //	private OAuth2ResourceServerProperties oAuth2ResourceServerProperties;
-//	@MockBean
+//	@MockitoBean
 //	private JwtDecoder jwtDecoder;
-	// @MockBean
-	// private ProblemDetailExtMapper problemDetailExtMapper;
+//	@MockitoBean
+//	private ProblemDetailExtMapper problemDetailExtMapper;
 
 	@Test
 	void contextLoads() {
