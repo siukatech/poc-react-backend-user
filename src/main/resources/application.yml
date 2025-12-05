@@ -13,27 +13,32 @@ spring:
 ##    cache-names: user
 #    type: simple
 
-    type: ehcache
-    ehcache:
+#    type: ehcache
+#    ehcache:
+#      time-to-live: 5m
+
+    type: redis
+    redis:
       time-to-live: 5m
 
-#    type: redis
-#    redis:
-#      time-to-live: 5m
-#  data:
-#    redis:
-#      host: localhost
-#      port: 36379
-##      port: 36380
-##      username: default
-#      password: redispass
-##      lettuce:
-##        pool:
-##          enabled: true
-##        sentinel:
-##          username: fbuser01
-##          password: ${spring.data.redis.password}
-##          master: redis
+#    type: caffeine-redis
+#    caffeine-redis:
+#      time-to-live: 1m
+  data:
+    redis:
+      host: localhost
+      port: 36379
+#      port: 36380
+#      username: default
+      password: redispass
+      timeout: 1000
+#      lettuce:
+#        pool:
+#          enabled: true
+#        sentinel:
+#          username: fbuser01
+#          password: ${spring.data.redis.password}
+#          master: redis
 
 # This is not working
 #  autoconfigure:
@@ -89,10 +94,20 @@ spring:
 
 
 management:
+  # Expose health and info endpoints
+  # Optionally, disable a specific endpoint (e.g., shutdown)
+  # management.endpoint.shutdown.enabled=false
   endpoints:
     web:
       exposure:
-        include: '*'
+#        include: '*'
+        include: 'health,info,metrics'
+#    shutdown:
+#      enabled: false
+  endpoint:
+    health:
+#      show-details: always
+      show-components: always
   tracing:
     sampling:
       probability: 1.0
@@ -103,6 +118,10 @@ management:
         http:
           server:
             requests: true
+  # Disable redis health check
+  health:
+    redis:
+      enabled: false
 
 
 app:
@@ -137,4 +156,5 @@ logging:
     com.siukatech.poc.react.backend.module.user.caching: DEBUG
     com.siukatech.poc.react.backend.module.user.config: DEBUG
     com.siukatech.poc.react.backend.user: DEBUG
+    com.github.benmanes.caffeine: DEBUG
 
