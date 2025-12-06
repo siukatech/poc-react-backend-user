@@ -17,13 +17,14 @@ spring:
 #    ehcache:
 #      time-to-live: 5m
 
-    type: redis
-    redis:
-      time-to-live: 5m
+#    type: redis
+#    redis:
+#      time-to-live: 5m
 
-#    type: caffeine-redis
-#    caffeine-redis:
-#      time-to-live: 1m
+    type: redis-caffeine
+    redis-caffeine:
+      time-to-live: 3m
+
   data:
     redis:
       host: localhost
@@ -31,10 +32,17 @@ spring:
 #      port: 36380
 #      username: default
       password: redispass
-      timeout: 1000
-#      lettuce:
-#        pool:
+      timeout: 600ms
+      connect-timeout: 600ms
+      lettuce:
+        shutdown-timeout: 200ms
+        command-timeout: 200ms
+        pool:
 #          enabled: true
+          max-active: 8
+          max-idle: 0
+          min-idle: 0
+          max-wait: -1
 #        sentinel:
 #          username: fbuser01
 #          password: ${spring.data.redis.password}
@@ -101,13 +109,17 @@ management:
     web:
       exposure:
 #        include: '*'
-        include: 'health,info,metrics'
+        include: health,info,metrics,caches
 #    shutdown:
 #      enabled: false
   endpoint:
     health:
 #      show-details: always
       show-components: always
+    metrics:
+      export:
+        prometheus:
+          enabled: true
   tracing:
     sampling:
       probability: 1.0
@@ -148,13 +160,17 @@ logging:
 #    org.springframework.web: TRACE
     org.springframework.security: TRACE
     org.springframework.http.client: TRACE
+    org.springframework.cache: DEBUG
     org.springframework.data.redis: DEBUG
+    org.springframework.redis: DEBUG
+    io.lettuce.core: DEBUG
+    com.github.benmanes.caffeine.cache: DEBUG
     org.springframework.web.servlet.DispatcherServlet: DEBUG
     com.siukatech.poc.react.backend.module.core: TRACE
     com.siukatech.poc.react.backend.module.core.config: DEBUG
+    com.siukatech.poc.react.backend.module.core.caching: DEBUG
     com.siukatech.poc.react.backend.module.user: DEBUG
-    com.siukatech.poc.react.backend.module.user.caching: DEBUG
+#    com.siukatech.poc.react.backend.module.user.caching: DEBUG
     com.siukatech.poc.react.backend.module.user.config: DEBUG
     com.siukatech.poc.react.backend.user: DEBUG
-    com.github.benmanes.caffeine: DEBUG
 
