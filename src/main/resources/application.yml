@@ -32,15 +32,17 @@ spring:
 #      port: 36380
 #      username: default
       password: redispass
-      timeout: 600ms
-      connect-timeout: 600ms
+#      timeout: 600ms
+#      connect-timeout: 600ms
+      timeout: 2s
+      connect-timeout: 2s
       lettuce:
         shutdown-timeout: 200ms
         command-timeout: 200ms
         pool:
 #          enabled: true
           max-active: 8
-          max-idle: 0
+          max-idle: 4
           min-idle: 0
           max-wait: -1
 #        sentinel:
