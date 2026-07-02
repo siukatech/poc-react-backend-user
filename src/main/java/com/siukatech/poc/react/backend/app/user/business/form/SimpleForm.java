@@ -1,4 +1,4 @@
-package com.siukatech.poc.react.backend.user.business.form;
+package com.siukatech.poc.react.backend.app.user.business.form;
 
 import com.siukatech.poc.react.backend.module.core.business.form.AbstractForm;
 import lombok.Data;

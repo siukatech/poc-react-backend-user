@@ -1,4 +1,4 @@
-package com.siukatech.poc.react.backend.user.config;
+package com.siukatech.poc.react.backend.app.user.config;
 
 import org.springframework.context.annotation.Configuration;
 

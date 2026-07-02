@@ -1,8 +1,8 @@
-package com.siukatech.poc.react.backend.user.business.mapper;
+package com.siukatech.poc.react.backend.app.user.business.mapper;
 
 import com.siukatech.poc.react.backend.module.core.business.mapper.AbstractMapper;
-import com.siukatech.poc.react.backend.user.business.dto.SimpleDto;
-import com.siukatech.poc.react.backend.user.business.form.SimpleForm;
+import com.siukatech.poc.react.backend.app.user.business.dto.SimpleDto;
+import com.siukatech.poc.react.backend.app.user.business.form.SimpleForm;
 import org.mapstruct.Mapper;
 
 @Mapper

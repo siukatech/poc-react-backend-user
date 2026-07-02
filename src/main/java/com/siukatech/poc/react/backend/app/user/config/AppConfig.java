@@ -1,4 +1,4 @@
-package com.siukatech.poc.react.backend.user.config;
+package com.siukatech.poc.react.backend.app.user.config;
 
 import com.siukatech.poc.react.backend.module.user.EnableUserSupport;
 import lombok.extern.slf4j.Slf4j;

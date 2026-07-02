@@ -1,4 +1,4 @@
-package com.siukatech.poc.react.backend.user.redis;
+package com.siukatech.poc.react.backend.app.user.redis;
 
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
