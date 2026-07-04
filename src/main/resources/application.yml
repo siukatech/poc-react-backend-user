@@ -97,7 +97,8 @@ spring:
       resource-server:
         jwt:
           keycloak:
-            issuer-uri: ${oauth2-client-keycloak}/realms/${client-realm}
+#            issuer-uri: ${oauth2-client-keycloak}/realms/${client-realm}
+            issuer-ext: ${oauth2-client-keycloak}/realms/${client-realm}
         opaque-token:
           keycloak:
             introspection-uri: ${oauth2-client-keycloak}/realms/${client-realm}/protocol/openid-connect/token/introspect

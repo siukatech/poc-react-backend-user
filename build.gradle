@@ -46,6 +46,8 @@ dependencies {
 //    implementation "com.siukatech.poc:react-backend-core:$coreProjectVersion"
     implementation "com.siukatech.poc:react-backend-module-user:$coreProjectVersion"
 
+//    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
 //    annotationProcessor 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
