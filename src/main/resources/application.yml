@@ -112,31 +112,29 @@ management:
     web:
       exposure:
 #        include: '*'
-        include: health,info,metrics,caches
+        include: health,info,metrics,caches,prometheus
+  endpoint:
 #    shutdown:
 #      enabled: false
-  endpoint:
     health:
 #      show-details: always
       show-components: always
+      # Disable redis health check
+      redis:
+        enabled: false
     metrics:
       export:
         prometheus:
           enabled: true
-  tracing:
-    sampling:
-      probability: 1.0
-  metrics:
-    distribution:
-      percentiles-histogram:
-        greeting: true
-        http:
-          server:
-            requests: true
-  # Disable redis health check
-  health:
-    redis:
-      enabled: false
+      distribution:
+        percentiles-histogram:
+          greeting: true
+          http:
+            server:
+              requests: true
+    tracing:
+      sampling:
+        probability: 1.0
 
 
 app:
