@@ -26,15 +26,15 @@ public class ReactBackendApp {
         // Sort alphabetically to make it easier to search
         Arrays.sort(beanNames);
 
-        log.info("printRegisteredBeans - ============== REGISTERED BEANS COUNT: {} ==============", beanNames.length);
+        log.trace("printRegisteredBeans - ============== REGISTERED BEANS COUNT: {} ==============", beanNames.length);
         for (String beanName : beanNames) {
             // Check the class type of the bean
             try {
                 Object beanInstance = context.getBean(beanName);
-                log.info("printRegisteredBeans - Bean Name: [{}] ----> Class: [{}]", beanName, beanInstance.getClass().getName());
+                log.trace("printRegisteredBeans - beanName: [{}] ----> Class: [{}]", beanName, beanInstance.getClass().getName());
             }
             catch (Exception e) {
-                log.info("printRegisteredBeans - Bean Name: [{}] ----> Exception: [{}]", beanName, e.getMessage());
+                log.error("printRegisteredBeans - beanName: [{}] ----> Exception: [{}]", beanName, e.getMessage());
             }
         }
         log.info("printRegisteredBeans - =======================================================");
